@@ -56,6 +56,13 @@ fun AppRoot(viewModel: HomeKeepViewModel) {
         }
     }
 
+    LaunchedEffect(route, activeId) {
+        val id = activeId
+        if (route == ROUTE_DETAIL && id != null && state.detail?.asset?.id != id) {
+            viewModel.openAsset(id)
+        }
+    }
+
     BackHandler(enabled = route != ROUTE_LIST) {
         route = when (route) {
             ROUTE_EDIT -> if (activeId == null) ROUTE_LIST else ROUTE_DETAIL
@@ -121,7 +128,6 @@ fun AppRoot(viewModel: HomeKeepViewModel) {
                             viewModel.saveAsset(activeId, input) { savedId ->
                                 activeId = savedId
                                 route = ROUTE_DETAIL
-                                viewModel.openAsset(savedId)
                             }
                         },
                         onBack = {
@@ -160,7 +166,6 @@ fun AppRoot(viewModel: HomeKeepViewModel) {
                         onOpen = { asset ->
                             activeId = asset.id
                             route = ROUTE_DETAIL
-                            viewModel.openAsset(asset.id)
                         },
                         onSettings = { route = ROUTE_SETTINGS },
                     )
