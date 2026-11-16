@@ -1,0 +1,28 @@
+# Android / Gradle
+.gradle/
+build/
+app/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.iml
+.idea/
+.navigation/
+*.hprof
+
+# Signing material - never commit
+*.jks
+*.keystore
+keystore.properties
+release/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Supabase CLI local state
+supabase/.temp/
+supabase/.branches/
+supabase/.env

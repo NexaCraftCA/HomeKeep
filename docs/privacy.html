@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HomeKeep Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; --accent: #b4552d; --bg: #fdf7f2; --ink: #221a16; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #1a1210; --ink: #f0e0d8; } }
+    body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+           background: var(--bg); color: var(--ink); line-height: 1.65; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
+    h1 { font-size: 2rem; margin-bottom: 4px; }
+    .muted { opacity: 0.7; font-size: 0.9rem; }
+    h2 { font-size: 1.15rem; margin-top: 32px; }
+    a { color: var(--accent); }
+    code { background: rgba(127,127,127,0.15); padding: 1px 5px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="muted">Effective 16 November 2026</p>
+
+  <p>HomeKeep is an Android app that helps you keep a register of household
+  assets, receipts, warranties, repairs and maintenance reminders. This policy
+  explains what is stored and why. It applies to the HomeKeep app and this
+  website.</p>
+
+  <h2>What we collect</h2>
+  <ul>
+    <li><strong>Account data:</strong> your email address and a password hash,
+      used to sign you in and keep your records private. Passwords are handled by
+      Supabase Auth; the app itself never stores your password.</li>
+    <li><strong>Content you create:</strong> asset details (including serial
+      numbers, purchase dates and prices), repair history, reminders, notes, and
+      any files you choose to upload such as receipts, warranty PDFs, manuals and
+      photos.</li>
+    <li><strong>Technical data:</strong> standard request logs kept by our
+      hosting/database provider for security and reliability. The app does not
+      collect advertising identifiers, precise location, contacts, SMS, health or
+      financial account data.</li>
+  </ul>
+
+  <h2>Why we process it</h2>
+  <p>Only to provide the app: authenticating you, storing and syncing your
+  records, showing reminders, and letting you delete your data. We do not sell
+  data, do not use it for advertising, and do not use it to track you across
+  other apps or websites.</p>
+
+  <h2>Where it is stored</h2>
+  <p>Data is stored in a Supabase project (Postgres database and object storage)
+  configured by the app operator. Requests use HTTPS. Files live in a private
+  storage bucket and each account can only read or write its own folder. Row
+  Level Security policies on every table restrict rows to the signed-in user.</p>
+
+  <h2>Retention and deletion</h2>
+  <p>Your records are kept until you delete them. You can delete an individual
+  asset together with its files at any time. You can delete your entire account
+  and all associated data from <em>Settings &rarr; Delete my account and data</em>.
+  Deletion removes your assets, attachments, repairs, reminders, stored files and
+  the authentication record. See the
+  <a href="account-deletion.html">account deletion page</a> for details. Some
+  provider backups may retain copies for a short period before expiring.</p>
+
+  <h2>Sharing</h2>
+  <p>Data is not shared with third parties except the infrastructure providers
+  that operate the app (Supabase for database, authentication and file storage,
+  and Google Play for distribution). These providers process data on our behalf.
+  We may disclose information if required by law.</p>
+
+  <h2>Security</h2>
+  <p>Traffic is encrypted in transit. Access to records and files is restricted
+  per account by database policies. No system is perfectly secure, so keep your
+  device and account password protected.</p>
+
+  <h2>Children</h2>
+  <p>HomeKeep is not directed at children under 13 and we do not knowingly
+  collect their personal information.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes materially, the effective date above will be updated
+  and the new version published at this address.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or deletion requests:
+  <a href="https://github.com/NexaCraftCA/HomeKeep/issues">open an issue on the
+  project page</a>.</p>
+</main>
+</body>
+</html>

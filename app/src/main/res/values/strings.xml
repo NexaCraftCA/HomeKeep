@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HomeKeep</string>
+    <string name="notification_channel_name">Maintenance reminders</string>
+    <string name="notification_channel_description">Alerts for upcoming maintenance and warranty dates</string>
+</resources>
