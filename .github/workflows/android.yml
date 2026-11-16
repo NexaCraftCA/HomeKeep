@@ -13,6 +13,8 @@ jobs:
   build:
     name: Build APK and AAB
     runs-on: ubuntu-latest
+    env:
+      KEYSTORE_BASE64: ${{ secrets.HOMEKEEP_KEYSTORE_BASE64 }}
 
     steps:
       - name: Checkout
@@ -33,13 +35,11 @@ jobs:
           EOF
 
       - name: Decode upload keystore
-        if: ${{ secrets.HOMEKEEP_KEYSTORE_BASE64 != '' }}
-        env:
-          HOMEKEEP_KEYSTORE_BASE64: ${{ secrets.HOMEKEEP_KEYSTORE_BASE64 }}
-        run: echo "$HOMEKEEP_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/homekeep-upload.jks"
+        if: env.KEYSTORE_BASE64 != ''
+        run: echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/homekeep-upload.jks"
 
       - name: Configure signing
-        if: ${{ secrets.HOMEKEEP_KEYSTORE_BASE64 != '' }}
+        if: env.KEYSTORE_BASE64 != ''
         run: |
           cat >> local.properties <<EOF
           HOMEKEEP_KEYSTORE_PATH=$RUNNER_TEMP/homekeep-upload.jks
